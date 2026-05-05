@@ -3,73 +3,77 @@
 <head>
   <meta charset="UTF-8">
   <title>NGHTPINK</title>
-  <meta name="description" content="NGHTPINK">
-
-  <link rel="icon" href="favicon.ico">
 
   <style>
     body {
       margin: 0;
-      background-color: #000000;
-      font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", Helvetica, Arial, sans-serif;
-      color: #fff;
+      background: #000;
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
     }
 
     /* HEADER */
     .header {
       display: flex;
       justify-content: center;
-      align-items: center;
       padding: 60px 20px 30px;
-      text-align: center;
     }
 
     h1 {
       font-size: 2.2rem;
       font-weight: 500;
-      letter-spacing: -0.02em;
-      transform: translateY(-10px);
       margin: 0;
     }
 
-    .white {
-      color: #ffffff;
-    }
+    .white { color: #fff; }
+    .pink { color: #f2c6c8; }
 
-    .pink {
-      color: #f2c6c8;
-    }
-
-    /* GRID SECTION */
-    .container {
+    /* GRID */
+    .grid {
       max-width: 1100px;
       margin: 0 auto;
       padding: 20px;
-    }
-
-    .grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 20px;
     }
 
-    .grid-item {
-      border-radius: 12px;
+    /* VIDEO CARD */
+    .card {
+      aspect-ratio: 9 / 16;
+      border-radius: 14px;
       overflow: hidden;
       background: #111;
+      position: relative;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.02);
+    }
+
+    .card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      opacity: 0.9;
+    }
+
+    /* overlay */
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.5), transparent);
     }
 
     /* RESPONSIVE */
     @media (max-width: 900px) {
-      .grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
+      .grid { grid-template-columns: repeat(2, 1fr); }
     }
 
     @media (max-width: 600px) {
-      .grid {
-        grid-template-columns: 1fr;
-      }
+      .grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -83,32 +87,25 @@
     </h1>
   </div>
 
-  <!-- TIKTOK GRID -->
-  <div class="container">
-    <div class="grid">
+  <!-- GRID -->
+  <div class="grid">
 
-      <div class="grid-item">
-        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@nghtpink/video/7519063668890291474" data-video-id="7519063668890291474">
-          <section></section>
-        </blockquote>
-      </div>
+    <a class="card" href="https://www.tiktok.com/@nghtpink/video/7519063668890291474" target="_blank">
+      <img src="https://www.tiktok.com/favicon.ico" alt="video 1">
+      <div class="overlay"></div>
+    </a>
 
-      <div class="grid-item">
-        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@nghtpink/video/7631437875078319381" data-video-id="7631437875078319381">
-          <section></section>
-        </blockquote>
-      </div>
+    <a class="card" href="https://www.tiktok.com/@nghtpink/video/7631437875078319381" target="_blank">
+      <img src="https://www.tiktok.com/favicon.ico" alt="video 2">
+      <div class="overlay"></div>
+    </a>
 
-      <div class="grid-item">
-        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@nghtpink/video/7635632039898729749" data-video-id="7635632039898729749">
-          <section></section>
-        </blockquote>
-      </div>
+    <a class="card" href="https://www.tiktok.com/@nghtpink/video/7635632039898729749" target="_blank">
+      <img src="https://www.tiktok.com/favicon.ico" alt="video 3">
+      <div class="overlay"></div>
+    </a>
 
-    </div>
   </div>
-
-  <script async src="https://www.tiktok.com/embed.js"></script>
 
 </body>
 </html>
